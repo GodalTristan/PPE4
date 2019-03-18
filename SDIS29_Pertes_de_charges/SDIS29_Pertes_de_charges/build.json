@@ -1,11 +1,11 @@
 {
      "android": {
-         "release": {
-             "keystore": "",
-             "storePassword": "",
-             "alias": "",
-             "password" : "",
-             "keystoreType": ""
-         }
+      "release": {
+        "keystore": "D:\\Bureau\\Cours\\PPE4_Project\\sdis29-release-key.keystore",
+        "storePassword": "AvelVor2004",
+        "alias": "GodalTristan",
+        "password": "AvelVor2004",
+        "keystoreType": ""
+      }
      }
  }
