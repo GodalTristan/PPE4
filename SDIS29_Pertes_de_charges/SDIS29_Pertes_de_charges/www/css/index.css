@@ -33,6 +33,12 @@ body {
     text-align:center;
 }
 
+.content_sdis label {
+    font-size: 1em;
+    color: white;
+    text-align: center;
+}
+
 .header_sdis {
     max-height: 100px;
 }

@@ -1,41 +1,214 @@
-﻿<!DOCTYPE html>
+﻿
+
 <html>
 <head>
+    <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>SDIS29 - Pertes de charges</title>
 </head>
-    <body>
-        <section data-role="page">
-            <section data-role="header" data-position="fixed" style="background-color: black;">
-                <img border="0" src="images/sdis_logo.png" alt="Logo, Facebook" style="float:left;display:inline" />
-                <div class="header_text">
-                    <p>CALCUL DES PERTES</p>
-                    <p style="float:left; margin-top:-8%; margin-left:13%;">DE CHARGES</p>
-                </div>
-            </section>
-            <section data-role="content">
-                <div class="content_sdis">
-                    <p>Nombre de tuyaux Ø45. Longueur : 20m.</p>
-                    <form id="nb_tuyau_45" action="javascript:setSdisData('nb_45')">
-                        <input id="nb_45" type="number" placeholder="Entrer un nombre" style="height: 100px;text-align: center;" />
-                        <input type="submit" class="button_next" value="Paramètre suivant" />
-                    </form>
-                    <input type="button" value="Capacity Chart" onclick="getSdisData();">
-                </div>
-            </section>
-            <footer data-role="footer" data-position="fixed">
-                <h4>Copyright 2019</h4>
-            </footer>
+<body onload="javascript:clearStorage()">
+    <!-- Type de Lance -->
+    <div data-role="page" id="type_lances">
+
+        <section data-role="header" data-position="fixed" style="background-color: black;">
+            <img border="0" src="images/sdis_logo.png" alt="Logo, Facebook" style="float:left;display:inline" />
+            <div class="header_text">
+                <p>CALCUL DES PERTES</p>
+                <p style="float:left; margin-top:-8%; margin-left:13%;">DE CHARGES</p>
+            </div>
         </section>
-        <script src="scripts/jquery-1.8.0.min.js"></script>
-        <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+        <div role="main" class="ui-content">
+            <div class="content_sdis">
+                <p>Choix de la lance à alimenter</p>
+                <form id="form_choix_lance" action="javascript:setSdisData('choix_lance')">
+                    <select id="choix_lance">
+                        <option value="ldv_500">LDV 500</option>
+                        <option value="ldv_1000">LDV 1000</option>
+                    </select>
+                    <input type="submit" class="ui-btn ui-shadow ui-corner-all" value="Paramètre suivant" onclick="location.href='#debit_lances';" />
+                </form>
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>&copy;2019 - GODAL Tristan</h4>
+        </footer>
+    </div>
+    <!-- Fin type de Lance -->
+    <!-- Débit de Lance -->
+    <div data-role="page" id="debit_lances">
+
+        <section data-role="header" data-position="fixed" style="background-color: black;">
+            <img border="0" src="images/sdis_logo.png" alt="Logo, Facebook" style="float:left;display:inline" />
+            <div class="header_text">
+                <p>CALCUL DES PERTES</p>
+                <p style="float:left; margin-top:-8%; margin-left:13%;">DE CHARGES</p>
+            </div>
+        </section>
+        <div role="main" class="ui-content">
+            <div class="content_sdis">
+                <p>Débit de la lance sélectionnée</p>
+                <form id="form_debit_lance" action="javascript:setSdisData('debit_lance')">
+                    <input id="debit_lance" type="number" placeholder="Entrer un nombre" style="height: 100px;text-align: center;" />
+                    <input type="submit" class="ui-btn ui-shadow ui-corner-all" value="Paramètre suivant" onclick="location.href='#tuyaux_45';" />
+                </form>
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>&copy;2019 - GODAL Tristan</h4>
+        </footer>
+    </div>
+    <!-- Fin débit de Lance -->
+    <!-- Nombre de tuyaux de 45-->
+    <div data-role="page" id="tuyaux_45">
+
+        <section data-role="header" data-position="fixed" style="background-color: black;">
+            <img border="0" src="images/sdis_logo.png" alt="Logo, Facebook" style="float:left;display:inline" />
+            <div class="header_text">
+                <p>CALCUL DES PERTES</p>
+                <p style="float:left; margin-top:-8%; margin-left:13%;">DE CHARGES</p>
+            </div>
+        </section>
+
+        <div role="main" class="ui-content">
+            <div class="content_sdis">
+                <p>Nombre de tuyaux Ø45. Longueur : 20m.</p>
+                <form id="nb_tuyau_45" action="javascript:setSdisData('nb_45')">
+                    <input id="nb_45" type="number" placeholder="Entrer un nombre" style="height: 100px;text-align: center;" />
+                    <input type="submit" class="ui-btn ui-shadow ui-corner-all" value="Paramètre suivant" onclick="location.href='#tuyaux_70';" />
+                </form>
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>&copy;2019 - GODAL Tristan</h4>
+        </footer>
+
+    </div>
+    <!-- Fin nombre de tuyaux de 45-->
+    <!-- Nombre de tuyaux de 70-->
+    <div data-role="page" id="tuyaux_70">
+
+        <section data-role="header" data-position="fixed" style="background-color: black;">
+            <img border="0" src="images/sdis_logo.png" alt="Logo, Facebook" style="float:left;display:inline" />
+            <div class="header_text">
+                <p>CALCUL DES PERTES</p>
+                <p style="float:left; margin-top:-8%; margin-left:13%;">DE CHARGES</p>
+            </div>
+        </section>
+
+        <div role="main" class="ui-content">
+            <div class="content_sdis">
+                <p>Nombre de tuyaux Ø70. Longueur : 20m.</p>
+                <form id="nb_tuyau_70" action="javascript:setSdisData('nb_70')">
+                    <input id="nb_70" type="number" placeholder="Entrer un nombre" style="height: 100px;text-align: center;" />
+                    <input type="submit" class="ui-btn ui-shadow ui-corner-all" value="Paramètre suivant" onclick="location.href='#tuyaux_110';" />
+                </form>
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>&copy;2019 - GODAL Tristan</h4>
+        </footer>
+
+    </div>
+    <!-- Fin nombre de tuyaux de 70-->
+    <!-- Nombre de tuyaux de 110-->
+    <div data-role="page" id="tuyaux_110">
+
+        <section data-role="header" data-position="fixed" style="background-color: black;">
+            <img border="0" src="images/sdis_logo.png" alt="Logo, Facebook" style="float:left;display:inline" />
+            <div class="header_text">
+                <p>CALCUL DES PERTES</p>
+                <p style="float:left; margin-top:-8%; margin-left:13%;">DE CHARGES</p>
+            </div>
+        </section>
+
+        <div role="main" class="ui-content">
+            <div class="content_sdis">
+                <p>Nombre de tuyaux Ø110. Longueur : 10m.</p>
+                <form id="nb_tuyau_110" action="javascript:setSdisData('nb_110')">
+                    <input id="nb_110" type="number" placeholder="Entrer un nombre" style="height: 100px;text-align: center;" />
+                    <input type="submit" class="ui-btn ui-shadow ui-corner-all" value="Paramètre suivant" onclick="location.href='#denivele';" />
+                </form>
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>&copy;2019 - GODAL Tristan</h4>
+        </footer>
+
+    </div>
+    <!-- Fin nombre de tuyaux de 110-->
+    <!-- Dénivelé -->
+    <div data-role="page" id="denivele">
+
+        <section data-role="header" data-position="fixed" style="background-color: black;">
+            <img border="0" src="images/sdis_logo.png" alt="Logo, Facebook" style="float:left;display:inline" />
+            <div class="header_text">
+                <p>CALCUL DES PERTES</p>
+                <p style="float:left; margin-top:-8%; margin-left:13%;">DE CHARGES</p>
+            </div>
+        </section>
+
+        <div role="main" class="ui-content">
+            <div class="content_sdis">
+                <p>Dénivelé (en m) de l'établissement.</p>
+                <form id="form_denivele" action="javascript:setSdisData('nb_denivele')">
+                    <input id="nb_denivele" type="number" placeholder="Entrer un nombre" style="height: 100px;text-align: center;" />
+                    <input id="check_denivele" type="checkbox" name="check_denivele" />
+                    <label for="check_denivele">Dénivelé descendant (-1 bar / 10m)</label>
+                    <input type="submit" class="ui-btn ui-shadow ui-corner-all" value="Paramètre suivant" onclick="javascript:showResult('nb_denivele')" />
+                </form>
+
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>&copy;2019 - GODAL Tristan</h4>
+        </footer>
+
+    </div>
+    <!-- Fin Dénivelé-->
+    <!-- Resultats -->
+    <div data-role="page" id="resultats">
+
+        <section data-role="header" data-position="fixed" style="background-color: black;">
+            <img border="0" src="images/sdis_logo.png" alt="Logo, Facebook" style="float:left;display:inline" />
+            <div class="header_text">
+                <p>CALCUL DES PERTES</p>
+                <p style="float:left; margin-top:-8%; margin-left:13%;">DE CHARGES</p>
+            </div>
+        </section>
+
+        <div role="main" class="ui-content">
+            <div class="content_sdis">
+                <p>Pertes de charges totales :</p>
+                <p id="result_display"></p>
+                <p>Pression à la pompe :</p>
+                <p id="result_total"></p>
+            </div>
+        </div> 
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>&copy;2019 - GODAL Tristan</h4>
+        </footer>
+
+    </div>
+    <!-- Fin Resultats -->
+
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
 </html>
+
