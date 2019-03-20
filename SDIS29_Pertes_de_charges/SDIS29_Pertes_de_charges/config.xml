@@ -27,10 +27,10 @@
     <allow-intent href="itms-apps:*" />
   </platform>
   <platform name="android">
-    <icon src="res/icons/android/icon-36-ldpi.png" density="ldpi" />
-    <icon src="res/icons/android/icon-48-mdpi.png" density="mdpi" />
-    <icon src="res/icons/android/icon-72-hdpi.png" density="hdpi" />
-    <icon src="res/icons/android/icon-96-xhdpi.png" density="xhdpi" />
+    <icon src="res/icons/android/sdis_logo.png" density="ldpi" />
+    <icon src="res/icons/android/sdis_logo.png" density="mdpi" />
+    <icon src="res/icons/android/sdis_logo.png" density="hdpi" />
+    <icon src="res/icons/android/sdis_logo.png" density="xhdpi" />
   </platform>
   <platform name="ios">
     <!-- iOS 8.0+ -->
@@ -76,14 +76,14 @@
     <icon src="res/icons/windows/Wide310x150Logo.scale-240.png" width="744" height="360" />
   </platform>
   <platform name="android">
-    <splash src="res/screens/android/screen-hdpi-landscape.png" density="land-hdpi" />
-    <splash src="res/screens/android/screen-ldpi-landscape.png" density="land-ldpi" />
-    <splash src="res/screens/android/screen-mdpi-landscape.png" density="land-mdpi" />
-    <splash src="res/screens/android/screen-xhdpi-landscape.png" density="land-xhdpi" />
-    <splash src="res/screens/android/screen-hdpi-portrait.png" density="port-hdpi" />
-    <splash src="res/screens/android/screen-ldpi-portrait.png" density="port-ldpi" />
-    <splash src="res/screens/android/screen-mdpi-portrait.png" density="port-mdpi" />
-    <splash src="res/screens/android/screen-xhdpi-portrait.png" density="port-xhdpi" />
+    <splash src="res/screens/android/sdis_logo.png" density="land-hdpi" />
+    <splash src="res/screens/android/sdis_logo.png" density="land-ldpi" />
+    <splash src="res/screens/android/sdis_logo.png" density="land-mdpi" />
+    <splash src="res/screens/android/sdis_logo.png" density="land-xhdpi" />
+    <splash src="res/screens/android/sdis_logo.png" density="port-hdpi" />
+    <splash src="res/screens/android/sdis_logo.png" density="port-ldpi" />
+    <splash src="res/screens/android/sdis_logo.png" density="port-mdpi" />
+    <splash src="res/screens/android/sdis_logo.png" density="port-xhdpi" />
   </platform>
   <platform name="ios">
     <splash src="res/screens/ios/screen-iphone-portrait.png" width="320" height="480" />

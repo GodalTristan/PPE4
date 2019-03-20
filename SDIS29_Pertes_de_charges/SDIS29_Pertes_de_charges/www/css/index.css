@@ -22,16 +22,23 @@ body {
     margin-right: 8%;
 }
 
-[data-role="header"] img { 
+[data-role="header"] img {
     max-width: 100px;
     float: left;
 }
 
 .content_sdis p {
-    font-size:2em;
-    color:white;
-    text-align:center;
+    font-size: 2em;
+    color: white;
+    text-align: center;
 }
+
+.padmin {
+    font-size: 0.8em !important;
+    color: white;
+    text-align: left !important;
+}
+
 
 .content_sdis label {
     font-size: 1em;
@@ -44,7 +51,7 @@ body {
 }
 
 .content_sdis {
-    margin-top:20%;
+    margin-top: 20%;
 }
 
 .input[type="submit"] {
@@ -63,4 +70,39 @@ body {
     font-weight: normal;
     font-style: normal;
     font-variant: normal;
+}
+
+.input_panel {
+    width: 37px;
+    height: 7px;
+    padding: 10px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.pression {
+    margin-left: 50px;
+}
+
+.label_panel {
+    text-align: left !important;
+    float: left !important;
+    margin-top: 12px !important;
+}
+
+.label_panel_right {
+    float: right !important;
+    margin-top: 12px !important;
+    margin-right: 20% !important;
+}
+
+.panel_title {
+    font-size: 1.5em !important;
+    text-align: left !important;
+    text-decoration: underline;
 }

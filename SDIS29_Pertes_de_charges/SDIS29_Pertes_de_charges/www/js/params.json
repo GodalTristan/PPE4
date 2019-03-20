@@ -1,10 +1,7 @@
 {
-  "exclude": [
-    "**/bin",
-    "**/bower_components",
-    "**/jspm_packages",
-    "**/node_modules",
-    "**/obj",
-    "**/platforms"
-  ]
+  "ldv_500_value": 6,
+  "ldv_1000_value": 7,
+  "p_tuyau_45": 1.5,
+  "p_tuyau_70": 0.55,
+  "p_tuyau_110": 0.28
 }

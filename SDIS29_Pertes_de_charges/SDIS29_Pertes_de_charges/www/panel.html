@@ -1,0 +1,76 @@
+﻿
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>SDIS29 - Panel Administrateur</title>
+
+    <script>
+        $(document).on("mobileinit", function () {
+            $.mobile.keepNative = "input";
+        });
+    </script>
+</head>
+<body onload="javascript:updateJSON('ldv_500_value', 8)">
+    <!-- Pannel -->
+    <div data-role="page" id="type_lances">
+
+        <section data-role="header" data-position="fixed" style="background-color: black;">
+            <img border="0" src="images/sdis_logo.png" alt="Logo, Facebook" style="float:left;display:inline" />
+            <div class="header_text">
+                <p style="float:left; margin-left:13%;">PANEL</p>
+                <p style="float:left; margin-top:-8%; margin-left:13%;">ADMINISTRATEUR</p>
+            </div>
+        </section>
+        <div role="main" class="ui-content">
+            <div class="content_sdis">
+                <form id="form_choix_lance" action="">
+
+                    <p class="panel_title">Pression requise :</p>
+                    <div id="pression" style="margin-left: 30%;">
+                        <label class="label_panel">LDV 500 : </label>
+                        <input type="text" id="ldv_500_value" name="ldv_500_value" class="input_panel" data-role="none" />
+                        <label class="label_panel_right"> bars à la lance</label><br />
+                        <label class="label_panel" style="margin-left: -6px !important;">LDV 1000 : </label>
+                        <input type="text" id="ldv_1000_value" name="ldv_1000_value" class="input_panel" data-role="none" />
+                        <label class="label_panel_right"> bars à la lance</label><br />
+                    </div><br />
+                    <p class="panel_title">Pertes de charge:</p>
+                    <div id="pression" style="margin-left: 30%;">
+                        <label class="label_panel" style="margin-left: -54px !important;">Pour 100m de Ø45 : </label>
+                        <input type="text" id="p_tuyau_45" name="p_tuyau_45" class="input_panel" data-role="none" />
+                        <label class="label_panel_right" style="margin-right: 42% !important;"> bars</label><br />
+                        <label class="label_panel" style="margin-left: -54px !important;">Pour 100m de Ø70 : </label>
+                        <input type="text" id="p_tuyau_70" name="p_tuyau_70" class="input_panel" data-role="none" />
+                        <label class="label_panel_right" style="margin-right: 42% !important;"> bars</label><br />
+                        <label class="label_panel" style="margin-left: -59px !important;">Pour 100m de Ø110 : </label>
+                        <input type="text" id="p_tuyau_110" name="p_tuyau_110" class="input_panel" data-role="none" />
+                        <label class="label_panel_right" style="margin-right: 42% !important;"> bars</label><br />
+                    </div><br />
+                    <input type="submit" class="ui-btn ui-shadow ui-corner-all" value="Valider" />
+                </form>
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>&copy;2019 - GODAL Tristan</h4>
+        </footer>
+    </div>
+    <!-- Fin panel -->
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
+
