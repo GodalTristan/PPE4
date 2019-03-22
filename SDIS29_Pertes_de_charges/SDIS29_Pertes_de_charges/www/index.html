@@ -12,7 +12,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>SDIS29 - Pertes de charges</title>
 </head>
-<body onload="javascript:clearStorage()">
+<body onload="javascript:clearStorageAndDeclareParams()">
     <!-- Type de Lance -->
     <div data-role="page" id="type_lances">
 
@@ -195,7 +195,7 @@
                 <p>Pression à la pompe :</p>
                 <p id="result_total"></p>
             </div>
-        </div> 
+        </div>
 
         <footer data-role="footer" data-position="fixed">
             <h4>&copy;2019 - GODAL Tristan</h4>
@@ -209,6 +209,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="js/params.js"></script>
 </body>
 </html>
 

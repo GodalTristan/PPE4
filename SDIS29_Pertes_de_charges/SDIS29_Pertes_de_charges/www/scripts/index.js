@@ -1,11 +1,4 @@
 ﻿/**
- * Clear toutes les données déjà stockées
- */
-function clearStorage() {
-    localStorage.clear();
-};
-
-/**
  * Créer un item en local et lui donne une valeur
  * @param string name
  */
@@ -94,21 +87,11 @@ function showResult(last_param) {
 
 
 /**
- * Lire le fichier JSON
+ * Lire les paramètres de pression
  * @param {any} champs
  */
 function readLine(champs) {
-    var json = function () {
-        var jsonTemp = null;
-        $.ajax({
-            'async': false,
-            'url': "js/params.json",
-            'success': function (data) {
-                jsonTemp = data;
-            }
-        });
-        return jsonTemp;
-    }();
+    var request_value = localStorage.getItem(champs);
 
-    return json[champs];
+    return request_value;
 };
